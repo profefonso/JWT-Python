@@ -1,4 +1,4 @@
-# BinarySearchTree
+# JWT - Python
 
 Creacion de Token JWT con Python Django API REST.
 
@@ -27,7 +27,7 @@ Para la instalación requiere [Docker](https://www.docker.com/) y [Docker Compos
 Clonar el proyecto e ingresar al directorio creado
 
 ```sh
-$ git clone https://github.com/profefonso/BinarySearchTree.git
+$ git clone https://github.com/profefonso/JWT-Python.git
 $ cd BinarySearchTree
 ```
 
@@ -41,7 +41,7 @@ $ docker-compose up
 ### Probar App
 
 Ingrese a la direccion para ver la documentacion del API en swagger
-[http://localhost:1337/api/](http://localhost:1337/api/)
+[http://localhost/api/](http://localhost/api/)
 
 
 License

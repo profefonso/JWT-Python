@@ -34,6 +34,10 @@ class UserCreate(APIView):
         if serializer.is_valid():
             user = serializer.save()
             if user:
+                if request.data['is_staff']:
+                    user.is_staff = True
+                    user.save()
+
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
