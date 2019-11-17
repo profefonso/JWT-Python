@@ -28,7 +28,7 @@ Clonar el proyecto e ingresar al directorio creado
 
 ```sh
 $ git clone https://github.com/profefonso/JWT-Python.git
-$ cd BinarySearchTree
+$ cd JWT-Python
 ```
 
 Descargar y construir las imagenes necesarias
@@ -43,6 +43,33 @@ $ docker-compose up
 Ingrese a la direccion para ver la documentacion del API en swagger
 [http://localhost/api/](http://localhost/api/)
 
+#### Crear Usuario:
+
+```sh
+$ curl -X POST -H "Content-Type: application/json" \
+ -d '{"username":"demo-admin@admin.com", "email":"demo-admin@admin.com", "password": "12345678", "is_staff": true}' \
+ http://localhost/user/
+```
+
+#### Obtener Token:
+
+```sh
+$ curl -X POST -H "Content-Type: application/json" \
+ -d '{"username":"demo-admin@admin.com", "password": "12345678"}' \
+ http://localhost/token
+```
+
+#### Validar Token:
+
+```sh
+$ curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" http://localhost/validate/
+```
+
+#### Listar Usuarios:
+
+```sh
+$  curl -H 'Accept: application/json' -H "Authorization: Bearer ${TOKEN}" http://localhost/user-list/
+```
 
 License
 ----
